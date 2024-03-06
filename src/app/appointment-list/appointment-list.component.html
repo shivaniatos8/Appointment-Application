@@ -1,0 +1,25 @@
+ 
+<div>
+    <input [(ngModel)]="newAppointmentTitle" placeholder="Appointment Title">
+    <input [(ngModel)]="newAppointmentDate" placeholder="Appointment Date" type="date">
+    <button (click)="addAppointement()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let appointment of appointments;index as i">
+        {{appointment.id}} {{appointment.title}} {{appointment.date | date:'dd.MM.yyyy'}}
+        <button (click)="deleteAppointment(i)">Delete</button>
+    </li>
+</ul>
+
+<div>
+    <input [(ngModel)]="newBookTitle" type="text" placeholder="Book Name">
+    <button  (click)="addBooks()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let book of books;index as i">
+        {{book.id}} {{book.title}} 
+        <button class="btn btn-danger" (click)="deleteBook(i)">Delete</button>
+    </li>
+</ul>
